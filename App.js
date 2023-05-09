@@ -1,24 +1,15 @@
-import "react-native-gesture-handler";
+import React, { Component,View } from 'react-native';
+import BrandingBar from './components/branding';
 
-import { StatusBar } from "expo-status-bar";
-import { SafeAreaProvider } from "react-native-safe-area-context";
-
-import { useLoadedAssets } from "./hooks/useLoadedAssets";
-import Navigation from "./navigation";
-import { useColorScheme } from "react-native";
-
-export default function App() {
-  const isLoadingComplete = useLoadedAssets();
-  const colorScheme = useColorScheme();
-
-  if (!isLoadingComplete) {
-    return null;
-  } else {
-    return (
-      <SafeAreaProvider>
-        <Navigation colorScheme={colorScheme} />
-        <StatusBar />
-      </SafeAreaProvider>
+const App = () => {
+  return (
+      <>
+        <View>
+          <BrandingBar />
+        </View>
+      </>
     );
   }
-}
+
+
+export default App;

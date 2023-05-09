@@ -35,3 +35,41 @@
 - Learn more about [Universal React](https://docs.expo.dev/).
 - See what API and components are [available in the React runtimes](https://docs.expo.dev/versions/latest/).
 - Find out more about developing apps and websites: [Official guides](https://docs.expo.dev/guides/).
+
+# UTA_Nursing_Center
+
+#You should have android studios
+#you should have xcode
+
+#select expo template while creating react native app
+npx create-react-native-app my-app
+
+#try if any error
+npm install -g eas-cli
+
+#in project folder
+react-native doctor, this will diognizes error, check the missing errors
+
+#npx/expo needs package-lock.json - node models to run
+
+#There 3 package manager, they are NPM, React-native, Expo
+
+#expo workes for android, ios and web to me
+
+#for web pls install
+npx expo install @expo/webpack-config@^18.0.1
+npm start
+npm run ios
+npm run android
+npm run web
+
+
+#all npm commands should be used in side the react native app
+#npm did not work for android but worked for ios
+npm start
+npm run ios
+npm run android
+npm run web
+npm install -g eas
+eas build -p android
+adb install build/app-debug.apk
