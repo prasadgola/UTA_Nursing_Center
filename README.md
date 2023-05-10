@@ -63,13 +63,5 @@ npm run ios
 npm run android
 npm run web
 
-
-#all npm commands should be used in side the react native app
-#npm did not work for android but worked for ios
-npm start
-npm run ios
-npm run android
-npm run web
-npm install -g eas
-eas build -p android
-adb install build/app-debug.apk
+# for menu bar
+npm install react-native-dropdown-picker
