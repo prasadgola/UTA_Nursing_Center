@@ -7,6 +7,7 @@ const PickerComponent = () => {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState("");
   const items = [
+    { label: "Home", value: "apple" },
     { label: "Option 1", value: "apple" },
     { label: "Option 2", value: "banana" },
     { label: "Option 3", value: "orange" },
