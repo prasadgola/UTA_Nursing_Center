@@ -1,6 +1,6 @@
 import BrandingBar from './components/branding';
-import PickerComponent from './components/DropdownPickerComponent';
-import Cards from './components/Cards';
+import Dropdownmenu from './components/Dropdownmenu';
+// import Cards from './components/Cards';
 import React, { View } from 'react-native';
 
 
@@ -9,8 +9,8 @@ const App = () => {
       <>
         <View>
           <BrandingBar />
-          <PickerComponent />
-          <Cards />
+          <Dropdownmenu />
+          {/* <Cards /> */}
         </View>
       </>
     );

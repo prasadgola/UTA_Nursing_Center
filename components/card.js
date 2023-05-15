@@ -5,13 +5,12 @@ const Card = ({ image, title, description }) => {
         <View style={styles.card}>
             <Image source={image} style={styles.image} />
             <View style={styles.titleAndDescription}>
-            <Text style={styles.title}>{title}</Text>
-            <Text style={styles.description}>{description}</Text>
+                <Text style={styles.title}>{title}</Text>
+                <Text style={styles.description}>{description}</Text>
             </View>
         </View>
     );
   };
-
 
 
 const styles = StyleSheet.create({
@@ -19,7 +18,6 @@ const styles = StyleSheet.create({
     width: 90,
     height: 90,
     margin: 20,
-    borderRadius: 5,
   },
   image: {
     width: '100%',
