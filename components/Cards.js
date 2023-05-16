@@ -35,11 +35,12 @@ const styles = StyleSheet.create({
       flex: 1,
     },
     row: {
-      top: 300,
+      top: 60,
       flexDirection: "row",
       flexWrap: "wrap",
-      alignItems: "center",
-      justifyContent: "center",
+      justifyContent: "flex-start",
+      alignContent: "space-between",
+      margin: 10,
     },
 });
 

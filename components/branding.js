@@ -5,7 +5,8 @@ const BrandingBar = () => {
     <>
       <View style={styles.brandingBar}>
         <Text style={styles.brandingText}>Text</Text>
-        <Image source={require('../assets/images/UTA.webp')} style={styles.brandingLogo}/>
+        <Text style={styles.brandingLogo}>LOGO</Text>
+        {/* <Image source={require('../assets/images/UTA.webp')} style={styles.brandingLogo}/> */}
       </View>
     </>
   );
@@ -13,7 +14,7 @@ const BrandingBar = () => {
 
 const styles = {
   brandingBar: {
-    top: 60,
+    top: 45,
     width: "100%",
     height: 70,
     backgroundColor: '#ffffff',
@@ -23,13 +24,14 @@ const styles = {
   },
   brandingText: {
     color: '#000000',
-    fontSize: 20,
+    fontSize: 28,
     marginLeft: 20,
   },
   brandingLogo: {
     width: 80,
     height: 30,
     marginRight: 10,
+    fontSize: 28,
   },
 };
 

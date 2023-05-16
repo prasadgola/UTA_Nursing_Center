@@ -3,8 +3,8 @@ import React, { View, StyleSheet, Text, Image } from 'react-native';
 const Card = ({ key, image, title }) => {
     return (
         <View style={styles.card}>
-          {/* source={image} */}
-          <Image  style={styles.image} />
+          
+          <Image source={image} style={styles.image} />
           <Text style={styles.title}>{title}</Text>
         </View>
     );
