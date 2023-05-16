@@ -1,6 +1,5 @@
 import BrandingBar from './components/branding';
 import Dropdownmenu from './components/Dropdownmenu';
-// import Cards from './components/Cards';
 import React, { View } from 'react-native';
 
 
@@ -10,7 +9,6 @@ const App = () => {
         <View>
           <BrandingBar />
           <Dropdownmenu />
-          {/* <Cards /> */}
         </View>
       </>
     );

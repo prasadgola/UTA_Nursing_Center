@@ -1,57 +1,28 @@
 import Card from './card';
 import React, { View, StyleSheet, TouchableOpacity, Linking } from 'react-native';
-import { useState } from "react";
 
   
-const Cards = () => {
-    const [cards, setCards] = useState([
-        {
-        image: require("../assets/images/UTA.webp"),
-        title: "Library",
-        link: "https://www.google.com/",
-        },
-        {
-        image: require("../assets/images/UTA.webp"),
-        title: "CONHI",
-        link: "https://www.google.com/",
-        },
-        {
-        image: require("../assets/images/UTA.webp"),
-        title: "HR",
-        link: "https://www.google.com/",
-        },
-        {
-        image: require("../assets/images/UTA.webp"),
-        title: "HR",
-        link: "https://www.google.com/",
-        },
-        {
-        image: require("../assets/images/UTA.webp"),
-        title: "HR",
-        link: "https://www.google.com/",
-        },
-        {
-        image: require("../assets/images/UTA.webp"),
-        title: "HR",
-        link: "https://www.google.com/",
-        },
-    ]);
+const Cards = ({images, links, titles}) => {
 
     return (
         <>
-            <View style={styles.row}>
-                {cards.map((card, index) => (
+            <View style={styles.row}> 
+                {images.map((image, i) => (
                     <TouchableOpacity
-                        key={index}
-                        onPress={() => {
-                            // Do something when the card is clicked.
-                            Linking.openURL(card.link);
+
+                    key={i}
+
+                    onPress={() => {
+                        Linking.openURL(links[i]);
+                    }}
+
+                    onLongPress={() => {
+                        // Do something when the card is long pressed.
                         }}
-                        onLongPress={() => {
-                            // Do something when the card is long pressed.
-                            }}
+
                     >
-                        <Card key={index} image={card.image} title={card.title} description={card.description} />
+
+                    <Card key={i} image={image} title={titles[i]} />
                     </TouchableOpacity>
                 ))}
             </View>
@@ -64,7 +35,7 @@ const styles = StyleSheet.create({
       flex: 1,
     },
     row: {
-      top: 90,
+      top: 300,
       flexDirection: "row",
       flexWrap: "wrap",
       alignItems: "center",
