@@ -65,3 +65,6 @@ npm run web
 
 # for menu bar
 npm install react-native-dropdown-picker
+
+# If expo is displaying something went wrong network issue
+expo start --tunnel

@@ -2,14 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import Cards from './Cards';
-import options from './Options'
+import opt from './Options'
 
 const Dropdownmenu = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const [selectedValue, setSelectedValue] = useState(null)
+  const [selectedValue, setSelectedValue] = useState("Home")
   const [link, setLink] = useState([])
   const [image, setImage] = useState([])
   const [title, setTitle] = useState([])
+  const [options,setOptions] = useState(opt)
 
 
 
@@ -32,15 +33,15 @@ const Dropdownmenu = () => {
   return (
     <>
       <View style={styles.dropDownPicker} zIndex={100}>
-          <DropDownPicker 
-            items={options}
-            open={isOpen}
-            value={selectedValue}
-            setOpen={setIsOpen} 
-            setValue={setSelectedValue}
-          />
-        </View>
-        <Cards style={styles.cards} images={image} links={link} titles={title} />
+        <DropDownPicker
+          items={options}
+          open={isOpen}
+          value={selectedValue}
+          setOpen={setIsOpen}
+          setValue={setSelectedValue}
+        />
+      </View>
+      <Cards oldoptions={options} updateoption={setOptions} style={styles.cards} images={image} links={link} titles={title} />
     </>
   )
 }
@@ -51,11 +52,10 @@ const styles = StyleSheet.create({
     height: 40,
     borderColor: '#000000',
     borderRadius: 5,
-    backgroundColor: 'black',
     top: 50,
   },
-  cards:{
-    top:100,
+  cards: {
+    top: 100,
   }
 });
 
