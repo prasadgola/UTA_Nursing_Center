@@ -1,6 +1,6 @@
 import BrandingBar from './components/branding';
 import Dropdownmenu from './components/Dropdownmenu';
-import React, { View, StyleSheet, Image, Text } from 'react-native';
+import React, { View } from 'react-native';
 
 
 const App = () => {

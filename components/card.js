@@ -1,6 +1,6 @@
 import React, { View, StyleSheet, Text, Image } from 'react-native';
 
-const Card = ({ key, image, title }) => {
+const Card = ({ image, title }) => {
   console.log('he')
 
     return (
