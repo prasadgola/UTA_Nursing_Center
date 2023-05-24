@@ -1,5 +1,5 @@
 import Card from './card';
-import React, { View, StyleSheet, TouchableOpacity, Linking} from 'react-native';
+import React, { View, StyleSheet, Alert, TouchableOpacity, Linking} from 'react-native';
 
 
 const Cards = ({ oldoptions, updateoption,images, links, titles }) => {
@@ -11,6 +11,20 @@ const Cards = ({ oldoptions, updateoption,images, links, titles }) => {
     updateoption(oldoptions)
   }
 
+  openTwoButtonAlert=(i, oldoptions)=>{
+    Alert.alert(
+      'Add to the Home Screen?',
+      'Add some text here',
+      [
+        {text: 'Yes', onPress: () => updatehome(i, oldoptions)},
+        {text: 'No', onPress: () => console.log('No button clicked'), style: 'cancel'},
+      ],
+      { 
+        cancelable: true 
+      }
+    );
+  }
+
 
   return (
     <>
@@ -19,7 +33,7 @@ const Cards = ({ oldoptions, updateoption,images, links, titles }) => {
           <TouchableOpacity
             onPress={() => { Linking.openURL(links[i]) }}
             onLongPress={() => {
-              updatehome(i, oldoptions)
+              openTwoButtonAlert(i,oldoptions)
             }}
             delayLongPress={1000}
           >
