@@ -21,6 +21,7 @@ const styles = {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    // backgroundColor:'black'
   },
   brandingText: {
     color: '#000000',

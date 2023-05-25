@@ -11,15 +11,20 @@ const Dropdownmenu = () => {
   const [image, setImage] = useState([])
   const [title, setTitle] = useState([])
   const [options,setOptions] = useState(opt)
+  const [iButton, setIButton] = useState(false)
+  // const
 
 
 
   useEffect(() => {
     const index = options.findIndex((item) => item.value === selectedValue);
+    // you can make the conditions based on indexs would be clearner
+    // still home condition yet to work for asyncronous storage. As of now, both the conditions here are same
     if (selectedValue === "Home") {
       setLink(options[index].links);
       setImage(options[index].images);
       setTitle(options[index].titles);
+      // setIButton(true)
     } else if (index !== -1 && options[index].links) {
       setLink(options[index].links);
       setImage(options[index].images);
@@ -32,6 +37,7 @@ const Dropdownmenu = () => {
 
   return (
     <>
+    {/* zIndex will make the drowpdown window overlay on top of all the elements */}
       <View style={styles.dropDownPicker} zIndex={100}>
         <DropDownPicker
           items={options}
@@ -41,7 +47,12 @@ const Dropdownmenu = () => {
           setValue={setSelectedValue}
         />
       </View>
-      <Cards oldoptions={options} updateoption={setOptions} style={styles.cards} images={image} links={link} titles={title} />
+      <Cards inHome={() => setIButton(!iButton)} oldoptions={options} updateoption={setOptions} style={styles.cards} images={image} links={link} titles={title} />
+      {
+        if (iButton) {
+          <Text>hello</Text>
+        }
+      }
     </>
   )
 }
@@ -53,6 +64,7 @@ const styles = StyleSheet.create({
     borderColor: '#000000',
     borderRadius: 5,
     top: 50,
+    // backgroundColor:'black',
   },
   cards: {
     top: 100,

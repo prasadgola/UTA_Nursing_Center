@@ -1,8 +1,8 @@
 import Card from './card';
-import React, { View, StyleSheet, Alert, TouchableOpacity, Linking} from 'react-native';
+import React, { Text, View, StyleSheet, Alert, TouchableOpacity, Linking} from 'react-native';
 
 
-const Cards = ({ oldoptions, updateoption,images, links, titles }) => {
+const Cards = ({ oldoptions, updateoption,images, links, titles, inHome, information }) => {
 
   const updatehome = (i, oldoptions) => {
     oldoptions[0].links.unshift(links[i])
@@ -25,15 +25,31 @@ const Cards = ({ oldoptions, updateoption,images, links, titles }) => {
     );
   }
 
+  informationButton=(inHome,i)=>{
+    if (i===images.length - 1) {
+      console.log(inHome)
+      return(
+        <>
+          <Text style={top = 90}> information here </Text>
+        </>
+      )
+    } else {
+      Linking.openURL(links[i])
+    }
+  }
+
 
   return (
     <>
       <View style={styles.row}>
         {images.map((image, i) => (
           <TouchableOpacity
-            onPress={() => { Linking.openURL(links[i]) }}
+            onPress={() => { 
+              informationButton(inHome, i)
+              // Linking.openURL(links[i]) 
+            }}
             onLongPress={() => {
-              openTwoButtonAlert(i,oldoptions)
+              this.openTwoButtonAlert(i,oldoptions)
             }}
             delayLongPress={1000}
           >
@@ -56,6 +72,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignContent: "space-between",
     margin: 10,
+    // backgroundColor: 'black',
   },
 });
 

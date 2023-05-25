@@ -1,12 +1,12 @@
 import BrandingBar from './components/branding';
 import Dropdownmenu from './components/Dropdownmenu';
-import React, { View } from 'react-native';
-
+import React, { View, Appearance } from 'react-native';
 
 const App = () => {
+  const colorScheme = Appearance.getColorScheme();
   return (
     <>
-      <View>
+      <View style={{ backgroundColor: 'black', height: '100%' }}>
         <BrandingBar />
         <Dropdownmenu />
       </View>
