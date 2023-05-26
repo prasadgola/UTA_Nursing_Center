@@ -6,7 +6,7 @@ const App = () => {
   const colorScheme = Appearance.getColorScheme();
   return (
     <>
-      <View style={{ backgroundColor: 'black', height: '100%' }}>
+      <View style={{ backgroundColor: 'white', height: '100%' }}>
         <BrandingBar />
         <Dropdownmenu />
       </View>

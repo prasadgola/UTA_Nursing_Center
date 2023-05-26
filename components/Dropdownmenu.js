@@ -24,11 +24,12 @@ const Dropdownmenu = () => {
       setLink(options[index].links);
       setImage(options[index].images);
       setTitle(options[index].titles);
-      // setIButton(true)
+      setIButton(true)
     } else if (index !== -1 && options[index].links) {
       setLink(options[index].links);
       setImage(options[index].images);
       setTitle(options[index].titles);
+      setIButton(false)
     } else {
       setLink("")
     }
@@ -47,12 +48,7 @@ const Dropdownmenu = () => {
           setValue={setSelectedValue}
         />
       </View>
-      <Cards inHome={() => setIButton(!iButton)} oldoptions={options} updateoption={setOptions} style={styles.cards} images={image} links={link} titles={title} />
-      {
-        if (iButton) {
-          <Text>hello</Text>
-        }
-      }
+      <Cards inHome={iButton} oldoptions={options} updateoption={setOptions} style={styles.cards} images={image} links={link} titles={title} />
     </>
   )
 }

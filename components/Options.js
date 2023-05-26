@@ -3,7 +3,7 @@ const opt = [
     label: "Home",
     value: "Home",
     links: [],
-    images: [require('../assets/images/Add.jpg'),],
+    images: [require('../assets/images/iButton.png'),],
     titles: ["Add"],
   },
   {
@@ -53,6 +53,7 @@ const opt = [
     links: [
       "https://www.netflix.com",
       "https://www.hulu.com",
+      "https://www.disneyplus.com",
       "https://www.disneyplus.com",
       "https://www.disneyplus.com",
       "https://www.disneyplus.com",
