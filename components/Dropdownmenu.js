@@ -2,7 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { View, StyleSheet } from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import Cards from './Cards';
-import opt from './Options'
+import opt from './Options';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+
+
 
 const Dropdownmenu = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -15,9 +19,20 @@ const Dropdownmenu = () => {
   // const
 
 
+  const getArray = () => {
+    const value = AsyncStorage.getItem('array');
+    if (value !== null) {
+      setOptions(JSON.parse(value));
+    } else {
+      setOptions(initialArray);
+    }
+  };
+
 
   useEffect(() => {
+
     const index = options.findIndex((item) => item.value === selectedValue);
+    
     // you can make the conditions based on indexs would be clearner
     // still home condition yet to work for asyncronous storage. As of now, both the conditions here are same
     if (selectedValue === "Home") {
