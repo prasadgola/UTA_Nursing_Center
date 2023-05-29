@@ -14,21 +14,64 @@ const Dropdownmenu = () => {
   const [link, setLink] = useState([])
   const [image, setImage] = useState([])
   const [title, setTitle] = useState([])
-  const [options,setOptions] = useState(opt)
+  const [options,setOptions] = useState()
   const [iButton, setIButton] = useState(false)
-  // const
+  const [newApp, setNewApp] = useState(true)
+
+  // if (newApp) {
+  //   AsyncStorage.setItem('options', JSON.stringify(opt));
+  //   setNewApp(false)
+  // }
+  
+  // const value = AsyncStorage.getItem('options');
+  // setOptions(JSON.parse(value));
+  
+  // console.log(newApp)
+
+  AsyncStorage.setItem('greeting', 'Hello, world!');
+
+  const greeting = await AsyncStorage.getItem('greeting');
+
+  console.log(greeting)
 
 
-  const getArray = () => {
-    const value = AsyncStorage.getItem('array');
-    if (value !== null) {
-      setOptions(JSON.parse(value));
-    } else {
-      setOptions(initialArray);
-    }
-  };
+  // const addItem = (item) => {
+  //   setOptions([...options, item]);
+  //   AsyncStorage.setItem('options', JSON.stringify(opt));
+  // };
+
+  // const removeItem = (index) => {
+  //   setOptions(options.slice(0, index).concat(options.slice(index + 1)));
+  //   AsyncStorage.setItem('options', JSON.stringify(options));
+  // };
+
+  // const getoptions = () => {
+  //   const value = AsyncStorage.getItem('options');
+  //   if (value !== null) {
+  //     setOptions(JSON.parse(value));
+  //   }
+  // };
+
+  // getoptions();
+  // console.log(options)
+  // useEffect(() => {
+  //   getoptions();
+  // }, []);
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+// When different options are clicked
   useEffect(() => {
 
     const index = options.findIndex((item) => item.value === selectedValue);
@@ -49,6 +92,17 @@ const Dropdownmenu = () => {
       setLink("")
     }
   }, [selectedValue]);
+
+
+
+
+
+
+
+
+
+
+
 
 
   return (
