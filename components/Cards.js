@@ -5,15 +5,16 @@ import Ibutton from './Ibutton';
 import React, { Text, View, StyleSheet, Alert, TouchableOpacity, Linking} from 'react-native';
 
 
-const Cards = ({ oldoptions, updateoption,images, links, titles, inHome }) => {
+const Cards = ({ oldoptions, updateOptions,images, links, titles, inHome }) => {
   const [information, setInformation] = useState('')
 
   // adding an element at the beginning of the array
   const updatehome = (i, oldoptions) => {
-    oldoptions[0].links.unshift(links[i]);
-    oldoptions[0].images.unshift(images[i]);
-    oldoptions[0].titles.unshift(titles[i]);
-    updateoption(oldoptions);
+    let newOptions = [...oldoptions];
+    newOptions[0].links.unshift(links[i]);
+    newOptions[0].images.unshift(images[i]);
+    newOptions[0].titles.unshift(titles[i]);
+    updateOptions(newOptions);
   }
 
   openTwoButtonAlert=(i, oldoptions)=>{
@@ -25,13 +26,15 @@ const Cards = ({ oldoptions, updateoption,images, links, titles, inHome }) => {
         'Add some text here',
         [
           {text: 'Ok', onPress: () => {
-            oldoptions[0].links.splice(i, 1);
-            oldoptions[0].images.splice(i, 1);
-            oldoptions[0].titles.splice(i, 1);
+            let newOptions = [...oldoptions];
+            newOptions[0].links.splice(i, 1);
+            newOptions[0].images.splice(i, 1);
+            newOptions[0].titles.splice(i, 1);
+            updateOptions(newOptions);
           }},
           {text: 'Cancel', onPress: () => console.log('No button clicked'), style: 'cancel'},
         ],
-        { 
+        {
           cancelable: true 
         }
       );
@@ -58,7 +61,7 @@ const Cards = ({ oldoptions, updateoption,images, links, titles, inHome }) => {
   const informationButton=(inHome,i)=>{
     if (inHome && i===images.length - 1) {
       if (information === '') {
-        setInformation('please choose options from the dropdownoption')
+        setInformation('Please add your preferences to the home screen')
       } else {
         setInformation('')
       }
@@ -79,13 +82,13 @@ const Cards = ({ oldoptions, updateoption,images, links, titles, inHome }) => {
             onLongPress={() => {
               this.openTwoButtonAlert(i,oldoptions)
             }}
-            delayLongPress={1000}
+            // delayLongPress={1000}
           >
-            <Card key={image}  image={image} title={titles[i]} />
+            <Card key={images.i}  image={image} title={titles[i]} />
           </TouchableOpacity>
         ))}
       </View >
-      <Text style={{top:190, left:70}}>{information}</Text>
+      <Text style={{top:210, left:55}}>{information}</Text>
     </>
   );
 }

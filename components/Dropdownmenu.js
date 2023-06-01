@@ -4,6 +4,7 @@ import DropDownPicker from 'react-native-dropdown-picker';
 import Cards from './Cards';
 import opt from './Options';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Extra from './extra'
 
 
 
@@ -14,59 +15,15 @@ const Dropdownmenu = () => {
   const [link, setLink] = useState([])
   const [image, setImage] = useState([])
   const [title, setTitle] = useState([])
-  const [options,setOptions] = useState()
   const [iButton, setIButton] = useState(false)
   const [newApp, setNewApp] = useState(true)
-
-  // if (newApp) {
-  //   AsyncStorage.setItem('options', JSON.stringify(opt));
-  //   setNewApp(false)
-  // }
-  
-  // const value = AsyncStorage.getItem('options');
-  // setOptions(JSON.parse(value));
-  
-  // console.log(newApp)
-
-  AsyncStorage.setItem('greeting', 'Hello, world!');
-
-  const greeting = await AsyncStorage.getItem('greeting');
-
-  console.log(greeting)
+  const [options, setOptions] = useState(opt)
 
 
-  // const addItem = (item) => {
-  //   setOptions([...options, item]);
-  //   AsyncStorage.setItem('options', JSON.stringify(opt));
-  // };
-
-  // const removeItem = (index) => {
-  //   setOptions(options.slice(0, index).concat(options.slice(index + 1)));
-  //   AsyncStorage.setItem('options', JSON.stringify(options));
-  // };
-
-  // const getoptions = () => {
-  //   const value = AsyncStorage.getItem('options');
-  //   if (value !== null) {
-  //     setOptions(JSON.parse(value));
-  //   }
-  // };
-
-  // getoptions();
-  // console.log(options)
+ 
   // useEffect(() => {
-  //   getoptions();
-  // }, []);
-
-
-
-
-
-
-
-
-
-
+  //   setOptions(options)
+  // }, [options[0]]);
 
 
 
@@ -93,22 +50,17 @@ const Dropdownmenu = () => {
     }
   }, [selectedValue]);
 
-
-
-
-
-
-
-
-
-
+  const updateOptions = (newOptions) => {
+    setOptions(newOptions);
+  };
 
 
 
   return (
     <>
-    {/* zIndex will make the drowpdown window overlay on top of all the elements */}
+      {/* zIndex will make the drowpdown window overlay on top of all the elements */}
       <View style={styles.dropDownPicker} zIndex={100}>
+        {/* <extra/> */}
         <DropDownPicker
           items={options}
           open={isOpen}
@@ -117,7 +69,15 @@ const Dropdownmenu = () => {
           setValue={setSelectedValue}
         />
       </View>
-      <Cards inHome={iButton} oldoptions={options} updateoption={setOptions} style={styles.cards} images={image} links={link} titles={title} />
+      <Cards
+        oldoptions={options}
+        updateOptions={updateOptions}
+        inHome={iButton}
+        style={styles.cards}
+        images={image}
+        links={link}
+        titles={title}
+      />
     </>
   )
 }

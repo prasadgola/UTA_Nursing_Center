@@ -3,8 +3,8 @@ const opt = [
     label: "Home",
     value: "Home",
     links: [],
-    images: [require('../assets/images/iButton.png'),],
-    titles: ["Add"],
+    images: [require('../assets/images/i.png'),],
+    titles: ["info"],
   },
   {
     label: "Option 1",
@@ -15,9 +15,9 @@ const opt = [
       "https://www.twitter.com",
     ],
     images: [
-      "",
-      "",
-      "",
+      require('../assets/images/gold.jpg'),
+      require('../assets/images/gold.jpg'),
+      require('../assets/images/gold.jpg'),
     ],
     titles: [
       "HR",
@@ -35,10 +35,10 @@ const opt = [
       "https://www.etsy.com",
     ],
     images: [
-      "",
-      "",
-      "",
-      "",
+      require('../assets/images/gold.jpg'),
+      require('../assets/images/gold.jpg'),
+      require('../assets/images/gold.jpg'),
+      require('../assets/images/gold.jpg'),
     ],
     titles: [
       "SRS",
@@ -59,12 +59,12 @@ const opt = [
       "https://www.disneyplus.com",
     ],
     images: [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
+      require('../assets/images/gold.jpg'),
+      require('../assets/images/gold.jpg'),
+      require('../assets/images/gold.jpg'),
+      require('../assets/images/gold.jpg'),
+      require('../assets/images/gold.jpg'),
+      require('../assets/images/gold.jpg'),
     ],
     titles: [
       "CS",
@@ -77,4 +77,7 @@ const opt = [
   },
 ];
 
+
+
+// const opt = [{ "images": ["", "", 9], "label": "Home", "links": ["https://www.etsy.com", "https://www.ebay.com"], "titles": ["CENT", "SWSH", "Add"], "value": "Home" }, { "images": ["", "", ""], "label": "Option 1", "links": ["https://www.google.com", "https://www.facebook.com", "https://www.twitter.com"], "titles": ["HR", "Library", "CONHI"], "value": "Option 1" }, { "images": ["", "", "", ""], "label": "Option 2", "links": ["https://www.amazon.com", "https://www.ebay.com", "https://www.etsy.com", "https://www.etsy.com"], "titles": ["SRS", "SWSH", "CENT", "CENT"], "value": "Option 2" }, { "images": ["", "", "", "", "", ""], "label": "Option 3", "links": ["https://www.netflix.com", "https://www.hulu.com", "https://www.disneyplus.com", "https://www.disneyplus.com", "https://www.disneyplus.com", "https://www.disneyplus.com"], "titles": ["CS", "Nursing", "Meta", "Quest 4", "Quest 4", "Quest 4"], "value": "Option 3" }]
 export default opt;
