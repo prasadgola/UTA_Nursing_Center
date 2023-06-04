@@ -10,7 +10,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Dropdownmenu = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedValue, setSelectedValue] = useState("Home");
+  const [selectedValue, setSelectedValue] = useState();
   const [link, setLink] = useState([]);
   const [image, setImage] = useState([]);
   const [title, setTitle] = useState([]);
@@ -19,63 +19,53 @@ const Dropdownmenu = () => {
   const [isLoading, setIsLoading] = useState (true);
   
 
-  const updateOptions = (newOptions) => {
+  const updateOptions = async (newOptions) => {
     setOptions(newOptions);
+    try {
+      await AsyncStorage.setItem('options', JSON.stringify(options));
+    } catch (error) {
+      console.log(error);
+    }
   };
+
 
 
   useEffect (() => {
     const fetchOptions = async () => {
-      let storedOptions = await AsyncStorage.getItem('options2');
+      let storedOptions = await AsyncStorage.getItem('options');
       if (storedOptions != null) {
         setOptions(JSON.parse(storedOptions));
+      } else {
+        try {
+          await AsyncStorage.setItem('options', JSON.stringify(opt));
+        } catch (error) {
+          console.log(error);
+        }
       }
     };
     fetchOptions();
   },[]);
 
 
-
   const handleValueChange = async (item) => {
-    //SelectedValue is just for displaying!!
-    setSelectedValue(item.value);
 
-    const index = options.findIndex((item) => item.value === selectedValue);
-
-    let newOptions = [...options];
-
-    if (index === 0) {
-      setLink(newOptions[index].links);
-      setImage(newOptions[index].images);
-      setTitle(newOptions[index].titles);
+    if (item.value === "Home") {
+      setLink(item.links);
+      setImage(item.images);
+      setTitle(item.titles);
       setIButton(true);
-    } else if (index !== -1) {
-      setLink(newOptions[index].links);
-      setImage(newOptions[index].images);
-      setTitle(newOptions[index].titles);
-      setIButton(false)
-    } else {
-      setLink("")
-    }
-
-    setOptions(newOptions);
-    // await AsyncStorage.setItem('options2', JSON.stringify(newOptions));
+    } else if (item) {
+      setLink(item.links);
+      setImage(item.images);
+      setTitle(item.titles);
+      setIButton(false);
+  } else {
+    setLink("");
+  }
   }
 
+  console.log(selectedValue)
 
-
-
-  // if (isLoading) {
-  //   handleValueChange();
-  //   setIsLoading(false);
-  //   return (
-  //     <>
-  //       <View>
-  //           <ActivityIndicator size="large" color="black" animating={isLoading} />
-  //       </View>
-  //     </>
-  //   );
-  // }
 
 
   return (
@@ -85,10 +75,10 @@ const Dropdownmenu = () => {
         <DropDownPicker
           items={options}
           open={isOpen}
-          Value={selectedValue}
+          defaultValue={"Home"}
           setOpen={setIsOpen}
           setValue={setSelectedValue}
-          onChangeValue = {handleValueChange}
+          onSelectItem = {handleValueChange}
         />
       </View>
       <Cards
