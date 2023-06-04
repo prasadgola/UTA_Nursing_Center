@@ -18,7 +18,7 @@ const Cards = ({ oldoptions, updateOptions,images, links, titles, inHome }) => {
   }
 
   openTwoButtonAlert=(i, oldoptions)=>{
-    // when home screen, longpress fucntions changes.
+    // when home screen, longpress functions changes.
     // bring setoldoptions instead of oldoptions because as soon as removing the card, it should reflect on screen
     if (inHome) {
       Alert.alert(
@@ -88,7 +88,7 @@ const Cards = ({ oldoptions, updateOptions,images, links, titles, inHome }) => {
           </TouchableOpacity>
         ))}
       </View >
-      <Text style={{top:210, left:55}}>{information}</Text>
+      <Text style={{top:210, left:49, fontSize:15}}>{information}</Text>
     </>
   );
 }

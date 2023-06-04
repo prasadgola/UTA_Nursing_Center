@@ -1,72 +1,94 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, ActivityIndicator, Text } from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import Cards from './Cards';
 import opt from './Options';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import Extra from './extra'
 
 
 
 
 const Dropdownmenu = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const [selectedValue, setSelectedValue] = useState("Home")
-  const [link, setLink] = useState([])
-  const [image, setImage] = useState([])
-  const [title, setTitle] = useState([])
-  const [iButton, setIButton] = useState(false)
-  const [newApp, setNewApp] = useState(true)
-  const [options, setOptions] = useState(opt)
-
-
- 
-  // useEffect(() => {
-  //   setOptions(options)
-  // }, [options[0]]);
-
-
-
-
-// When different options are clicked
-  useEffect(() => {
-
-    const index = options.findIndex((item) => item.value === selectedValue);
-    
-    // you can make the conditions based on indexs would be clearner
-    // still home condition yet to work for asyncronous storage. As of now, both the conditions here are same
-    if (selectedValue === "Home") {
-      setLink(options[index].links);
-      setImage(options[index].images);
-      setTitle(options[index].titles);
-      setIButton(true)
-    } else if (index !== -1 && options[index].links) {
-      setLink(options[index].links);
-      setImage(options[index].images);
-      setTitle(options[index].titles);
-      setIButton(false)
-    } else {
-      setLink("")
-    }
-  }, [selectedValue]);
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedValue, setSelectedValue] = useState("Home");
+  const [link, setLink] = useState([]);
+  const [image, setImage] = useState([]);
+  const [title, setTitle] = useState([]);
+  const [iButton, setIButton] = useState(false);
+  const [options, setOptions] = useState([]);
+  const [isLoading, setIsLoading] = useState (true);
+  
 
   const updateOptions = (newOptions) => {
     setOptions(newOptions);
   };
 
 
+  useEffect (() => {
+    const fetchOptions = async () => {
+      let storedOptions = await AsyncStorage.getItem('options2');
+      if (storedOptions != null) {
+        setOptions(JSON.parse(storedOptions));
+      }
+    };
+    fetchOptions();
+  },[]);
+
+
+
+  const handleValueChange = async (item) => {
+    //SelectedValue is just for displaying!!
+    setSelectedValue(item.value);
+
+    const index = options.findIndex((item) => item.value === selectedValue);
+
+    let newOptions = [...options];
+
+    if (index === 0) {
+      setLink(newOptions[index].links);
+      setImage(newOptions[index].images);
+      setTitle(newOptions[index].titles);
+      setIButton(true);
+    } else if (index !== -1) {
+      setLink(newOptions[index].links);
+      setImage(newOptions[index].images);
+      setTitle(newOptions[index].titles);
+      setIButton(false)
+    } else {
+      setLink("")
+    }
+
+    setOptions(newOptions);
+    // await AsyncStorage.setItem('options2', JSON.stringify(newOptions));
+  }
+
+
+
+
+  // if (isLoading) {
+  //   handleValueChange();
+  //   setIsLoading(false);
+  //   return (
+  //     <>
+  //       <View>
+  //           <ActivityIndicator size="large" color="black" animating={isLoading} />
+  //       </View>
+  //     </>
+  //   );
+  // }
+
 
   return (
     <>
       {/* zIndex will make the drowpdown window overlay on top of all the elements */}
       <View style={styles.dropDownPicker} zIndex={100}>
-        {/* <extra/> */}
         <DropDownPicker
           items={options}
           open={isOpen}
-          value={selectedValue}
+          Value={selectedValue}
           setOpen={setIsOpen}
           setValue={setSelectedValue}
+          onChangeValue = {handleValueChange}
         />
       </View>
       <Cards
@@ -79,8 +101,9 @@ const Dropdownmenu = () => {
         titles={title}
       />
     </>
-  )
-}
+  );
+};
+
 
 const styles = StyleSheet.create({
   dropDownPicker: {

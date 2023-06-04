@@ -15,9 +15,9 @@ const opt = [
       "https://www.twitter.com",
     ],
     images: [
-      require('../assets/images/gold.jpg'),
-      require('../assets/images/gold.jpg'),
-      require('../assets/images/gold.jpg'),
+      require('../assets/images/white.png'),
+      require('../assets/images/white.png'),
+      require('../assets/images/white.png'),
     ],
     titles: [
       "HR",
@@ -35,10 +35,10 @@ const opt = [
       "https://www.etsy.com",
     ],
     images: [
-      require('../assets/images/gold.jpg'),
-      require('../assets/images/gold.jpg'),
-      require('../assets/images/gold.jpg'),
-      require('../assets/images/gold.jpg'),
+      require('../assets/images/white.png'),
+      require('../assets/images/white.png'),
+      require('../assets/images/white.png'),
+      require('../assets/images/white.png'),
     ],
     titles: [
       "SRS",
@@ -59,12 +59,12 @@ const opt = [
       "https://www.disneyplus.com",
     ],
     images: [
-      require('../assets/images/gold.jpg'),
-      require('../assets/images/gold.jpg'),
-      require('../assets/images/gold.jpg'),
-      require('../assets/images/gold.jpg'),
-      require('../assets/images/gold.jpg'),
-      require('../assets/images/gold.jpg'),
+      require('../assets/images/white.png'),
+      require('../assets/images/white.png'),
+      require('../assets/images/white.png'),
+      require('../assets/images/white.png'),
+      require('../assets/images/white.png'),
+      require('../assets/images/white.png'),
     ],
     titles: [
       "CS",

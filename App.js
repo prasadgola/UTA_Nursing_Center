@@ -3,6 +3,7 @@ import Dropdownmenu from './components/Dropdownmenu';
 import React, { View, Appearance } from 'react-native';
 import opt from './components/Options';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useEffect, useState } from 'react';
 
 // AsyncStorage.init();
 
