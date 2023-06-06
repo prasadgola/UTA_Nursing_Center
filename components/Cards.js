@@ -2,7 +2,7 @@ import { color } from 'react-native-reanimated';
 import { useState, useEffect } from 'react';
 import Card from './card';
 import Ibutton from './Ibutton';
-import React, { Text, View, StyleSheet, Alert, TouchableOpacity, Linking} from 'react-native';
+import React, { Text, View, StyleSheet,ScrollView, Alert, TouchableOpacity, Linking} from 'react-native';
 
 
 const Cards = ({ oldoptions, updateOptions,images, links, titles, inHome }) => {
@@ -73,6 +73,7 @@ const Cards = ({ oldoptions, updateOptions,images, links, titles, inHome }) => {
 
   return (
     <>
+    <ScrollView style={styles.scrollview}>
       <View style={styles.row}>
         {images.map((image, i) => (
           <TouchableOpacity
@@ -89,6 +90,7 @@ const Cards = ({ oldoptions, updateOptions,images, links, titles, inHome }) => {
         ))}
       </View >
       <Text style={{top:210, left:49, fontSize:15}}>{information}</Text>
+      </ScrollView>
     </>
   );
 }
@@ -98,13 +100,18 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   row: {
-    top: 60,
+    top: 75,
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "flex-start",
     alignContent: "space-between",
     margin: 10,
+    bottom: 0
     // backgroundColor: 'black',
+  },
+  scrollview:{
+    // width: '50%',
+    bottom: 0,
   },
 });
 

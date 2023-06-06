@@ -1,28 +1,42 @@
 import BrandingBar from './components/branding';
 import Dropdownmenu from './components/Dropdownmenu';
-import React, { View, Appearance } from 'react-native';
+import React, { View, Appearance, StatusBar, PlatformColor } from 'react-native';
 import opt from './components/Options';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useEffect, useState } from 'react';
+import type {StatusBarStyle} from 'react-native';
 
 // AsyncStorage.init();
 
 
 
 const App = () => {
-  const colorScheme = Appearance.getColorScheme();
 
   
-
   return (
     <>
-      <View style={{ backgroundColor: 'white', height: '100%' }}>
+      <StatusBar
+        animated={true}
+        backgroundColor="#0061AC"
+      />
+      <View style={styles.app}>
         <BrandingBar />
         <Dropdownmenu />
       </View>
     </>
   );
-}
+};
 
+
+const styles = {
+  statusbar: {
+    // ‘default’, ‘light-content’, or ‘dark-content’
+    barStyle: "light-content",
+  },
+  app: {
+    backgroundColor: 'white',
+    height: '100%',
+  },
+}
 
 export default App;
