@@ -73,7 +73,7 @@ const Cards = ({ oldoptions, updateOptions,images, links, titles, inHome }) => {
 
   return (
     <>
-    <ScrollView style={styles.scrollview}>
+    <ScrollView>
       <View style={styles.row}>
         {images.map((image, i) => (
           <TouchableOpacity
@@ -100,17 +100,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   row: {
-    top: 15,
+    top: 2,
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "flex-start",
-    alignContent: "space-between",
-    margin: 10,
-    bottom: 0,
-  },
-  scrollview:{
-    // width: '50%',
-    bottom: 0,
+    // alignContent: "space-between",
+    margin: Platform.select({ios:11,android:10}),
+    // bottom: -10,
   },
 });
 

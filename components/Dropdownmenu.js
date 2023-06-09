@@ -98,6 +98,9 @@ const Dropdownmenu = () => {
           onSelectItem = {handleValueChange}
           containerStyle={styles.container}
           placeholder={selectedValue}
+          arrowIconContainerStyle = {styles.arrow}
+          // labelStyle = {styles.label}
+          labelStyle={{ fontSize: 98 }}
         />
       </View>
 
@@ -119,19 +122,24 @@ const styles = StyleSheet.create({
   dropDownPicker: {
     width: '100%',
     height: Platform.select({ios:60,android:60,}),
-    borderColor: '#000000',
-    borderRadius: 5,
+    borderRadius: 10,
     borderWidth: 2,
     borderColor: 'black',
-    top: Platform.select({ios:0,android:0,}),
+    top: Platform.select({ios:2,android:1}),
+    color: 'red',
+    frontWidth: 'bold',
   },
-  container: {
+  arrow: {
+    backgroundColor: '#CC4A13',
+    width: 30,
+    height: 30,
+    alignItems: 'center',
+    justifyContent: "center",
+    marginRight: 20,
+    borderRadius: 4,
   },
-  scrollview:{
-    // width: '50%',
-    bottom: 0,
-  },
-  containerStyle:{
+  label: {
+    fontSize: 10,
     fontWeight: 'bold',
   },
 });

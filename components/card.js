@@ -2,50 +2,45 @@ import React, { View, StyleSheet, Text, Image } from 'react-native';
 
 const Card = ({ image, title }) => {
 
-    return (
-        <View style={styles.card}>
-          
-          <Image source={image} style={styles.image} />
-          <Text style={styles.title}>{title}</Text>
-        </View>
-    );
-  };
+  return (
+    <View style={styles.container}>
+        <Image source={image} style={styles.image} />
+      <Text style={styles.title}>{title}</Text>
+    </View>
+  );
+};
 
 
 const styles = StyleSheet.create({
-  card: {
-    width: 90,
-    height: 90,
-    margin: 20,
+  container: {
+    height: 150,
+    width: 110,
     alignItems: "center",
+    margin: Platform.select({ios:13,android:10}),
     justifyContent: "center",
+    backgroundColor: 'white',
+    borderRadius: 5,
+    borderColor: 'black',
+    borderWidth: 0,
+    shadowColor: '#0A3657',
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.5,
+    shadowRadius: 5,
+    elevation: 15,
   },
   image: {
-    width: '100%',
-    height: '100%',
-    borderRadius: 1,
+    width: 90,
+    height: 90,
+    borderRadius: 8,
     borderColor: 'black',
-    borderWidth: 2,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 10 },
-    shadowOpacity: 0.8,
-    shadowRadius: 2,
+    borderWidth: 1,
+    top: -3,
+
   },
   title: {
-    fontSize: 22,
-    fontWeight: "bold",
-    flexWrap: "wrap",
-    alignItems: "center",
-    justifyContent: "center",
-    color: "#0B3454",
-  },
-  description: {
-    fontSize: 16,
-  },
-  moreCards: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    top:8,
+    fontSize: 15,
+    color: "black",
   },
 });
 

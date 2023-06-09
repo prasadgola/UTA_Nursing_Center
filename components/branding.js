@@ -5,11 +5,11 @@ const BrandingBar = () => {
     <>
       <View style={styles.brandingBar}>
         <View style={styles.container}>
+          {/* <Text style={styles.brandingLogo}>LOGO</Text> */}
+          <Image source={require('../assets/images/uta-logo.png')} style={styles.brandingLogo} />
           <View style={styles.orange}>
             <Text style={styles.brandingText}>Text</Text>
           </View>
-          {/* <Text style={styles.brandingLogo}>LOGO</Text> */}
-          <Image source={require('../assets/images/uta-logo.png')} style={styles.brandingLogo} />
         </View>
       </View>
     </>
@@ -20,17 +20,17 @@ const styles = {
   brandingBar: {
     top: Platform.select({ios:0,android:0,}),
     width: "100%",
-    height: Platform.select({ios:130,android:75,}),
-    backgroundColor: '#0061AC',
+    height: Platform.select({ios:130,android:85,}),
+    backgroundColor: '#0A3657',
   },
   container: {
-    top: Platform.select({ios:70,android:20,}),
+    top: Platform.select({ios:70,android:30,}),
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
   orange: {
     backgroundColor: '#CC4A13',
-    marginLeft: 20,
+    marginRight: 30,
     width: 80,
     height: 40,
     alignItems: 'center',
@@ -45,7 +45,7 @@ const styles = {
   brandingLogo: {
     width: 80,
     height: 30,
-    marginRight: 30,
+    marginLeft: 20,
     fontSize: 28,
   },
 };

@@ -17,7 +17,7 @@ const App = () => {
     <>
       <StatusBar
         animated={true}
-        backgroundColor="#0061AC"
+        backgroundColor="#0A3657"
       />
       <View style={styles.app}>
         <BrandingBar />
@@ -34,7 +34,7 @@ const styles = {
     barStyle: "light-content",
   },
   app: {
-    backgroundColor: 'white',
+    backgroundColor: '#F5F5F5',
     height: '100%',
   },
 }
