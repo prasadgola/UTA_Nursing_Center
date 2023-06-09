@@ -27,12 +27,10 @@ const styles = {
     top: Platform.select({ios:70,android:20,}),
     flexDirection: 'row',
     justifyContent: 'space-between',
-    // alignItems: 'center',
   },
   orange: {
     backgroundColor: '#CC4A13',
     marginLeft: 20,
-    // borderRadius: 5,
     width: 80,
     height: 40,
     alignItems: 'center',

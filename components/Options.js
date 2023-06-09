@@ -35,7 +35,7 @@ const opt = [
       "https://www.etsy.com",
     ],
     images: [
-      require('../assets/images/white.png'),
+      require('../assets/images/blue.jpg'),
       require('../assets/images/white.png'),
       require('../assets/images/white.png'),
       require('../assets/images/white.png'),

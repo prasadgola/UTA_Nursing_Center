@@ -83,26 +83,6 @@ const Dropdownmenu = () => {
     setPress(false); // change press state to false
   };
 
-  const styles = StyleSheet.create({
-    dropDownPicker: {
-      width: '100%',
-      height: Platform.select({ios:70,android:70,}),
-      borderColor: '#000000',
-      borderRadius: 5,
-      borderWidth: 2,
-      backgroundColor: backgroundColor,
-      borderColor: 'black',
-      top: Platform.select({ios:0,android:0,}),
-    },
-    scrollview:{
-      // width: '50%',
-      bottom: 0,
-    },
-    containerStyle:{
-      fontWeight: 'bold',
-    },
-  });
-
 
   return (
     <>
@@ -112,15 +92,12 @@ const Dropdownmenu = () => {
           style={styles.dropDownPicker}
           items={options}
           open={isOpen}
-          defaultValue={"Home"}
+          Value={options[0]}
           setOpen={setIsOpen}
           setValue={setSelectedValue}
           onSelectItem = {handleValueChange}
-          containerStyle = {styles.containerStyle}
-          dropDownStyle={{backgroundColor: backgroundColor}} // use the variable here
-          onResponderStart={handleResponderStart} // handle responder start event
-          onResponderRelease={handleResponderRelease} // handle responder release event
-          onStartShouldSetResponder={() => true}
+          containerStyle={styles.container}
+          placeholder={selectedValue}
         />
       </View>
 
@@ -136,6 +113,28 @@ const Dropdownmenu = () => {
     </>
   );
 };
+
+
+const styles = StyleSheet.create({
+  dropDownPicker: {
+    width: '100%',
+    height: Platform.select({ios:60,android:60,}),
+    borderColor: '#000000',
+    borderRadius: 5,
+    borderWidth: 2,
+    borderColor: 'black',
+    top: Platform.select({ios:0,android:0,}),
+  },
+  container: {
+  },
+  scrollview:{
+    // width: '50%',
+    bottom: 0,
+  },
+  containerStyle:{
+    fontWeight: 'bold',
+  },
+});
 
 
 

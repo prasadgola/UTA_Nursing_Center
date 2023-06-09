@@ -100,14 +100,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   row: {
-    top: 75,
+    top: 15,
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "flex-start",
     alignContent: "space-between",
     margin: 10,
-    bottom: 0
-    // backgroundColor: 'black',
+    bottom: 0,
   },
   scrollview:{
     // width: '50%',
