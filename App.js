@@ -34,7 +34,7 @@ const styles = {
     barStyle: "light-content",
   },
   app: {
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#F9FAFD',
     height: '100%',
   },
 }

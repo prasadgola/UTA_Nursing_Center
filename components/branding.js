@@ -20,7 +20,7 @@ const styles = {
   brandingBar: {
     top: Platform.select({ios:0,android:0,}),
     width: "100%",
-    height: Platform.select({ios:130,android:85,}),
+    height: Platform.select({ios:130,android:85}),
     backgroundColor: '#0A3657',
   },
   container: {
@@ -45,7 +45,7 @@ const styles = {
   brandingLogo: {
     width: 80,
     height: 30,
-    marginLeft: 20,
+    marginLeft: 30,
     fontSize: 28,
   },
 };

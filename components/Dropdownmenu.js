@@ -4,6 +4,8 @@ import DropDownPicker from 'react-native-dropdown-picker';
 import Cards from './Cards';
 import opt from './Options';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { ArrowUp, ArrowDown } from 'react-native-vector-icons/MaterialCommunityIcons';
+
 
 
 
@@ -83,6 +85,14 @@ const Dropdownmenu = () => {
     setPress(false); // change press state to false
   };
 
+  // const ArrowUp = () => (
+  //   <Icon name="arrow-up" color="red" />
+  // );
+
+  // const MyArrowDownIcon = () => (
+  //   <Icon name="arrow-down" color="red" />
+  // );
+
 
   return (
     <>
@@ -96,11 +106,11 @@ const Dropdownmenu = () => {
           setOpen={setIsOpen}
           setValue={setSelectedValue}
           onSelectItem = {handleValueChange}
-          containerStyle={styles.container}
+          // containerStyle={styles.dropDownPicker}
           placeholder={selectedValue}
-          arrowIconContainerStyle = {styles.arrow}
-          // labelStyle = {styles.label}
-          labelStyle={{ fontSize: 98 }}
+          placeholderStyle={styles.placeOption}
+          listItemLabelStyle={styles.options}
+          arrowIconContainerStyle = {styles.arrowcontainer}
         />
       </View>
 
@@ -121,26 +131,49 @@ const Dropdownmenu = () => {
 const styles = StyleSheet.create({
   dropDownPicker: {
     width: '100%',
-    height: Platform.select({ios:60,android:60,}),
-    borderRadius: 10,
+    height: Platform.select({ios:55,android:56}),
+    borderRadius: 9,
     borderWidth: 2,
     borderColor: 'black',
     top: Platform.select({ios:2,android:1}),
-    color: 'red',
-    frontWidth: 'bold',
+    backgroundColor: 'white',
+    shadowColor: '#0A3657',
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: .4,
+    shadowRadius: 5,
+    elevation: 30,
   },
-  arrow: {
-    backgroundColor: '#CC4A13',
+  placeOption: {
+    color: 'black',
+    fontWeight: '500',
+    marginLeft: 20,
+    fontSize: 18,
+  },
+  arrowcontainer: {
+    // backgroundColor: '#0A3657',
     width: 30,
     height: 30,
     alignItems: 'center',
     justifyContent: "center",
-    marginRight: 20,
-    borderRadius: 4,
+    marginRight: 21,
+    color:'white',
+    borderColor: "black",
+    borderWidth: Platform.select({ios:1,android:2}),
+    borderRadius: 5,
+    shadowColor: 'black',
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 1,
+    shadowRadius: 1,
   },
-  label: {
-    fontSize: 10,
-    fontWeight: 'bold',
+  dropDownContainer: {
+    backgroundColor:"black",
+  },
+  options: {
+    color: 'black',
+    fontStyle:'normal',
+    fontSize: Platform.select({ios:16,android:17}),
+    marginLeft: 21,
+    fontWeight: '500',
   },
 });
 
