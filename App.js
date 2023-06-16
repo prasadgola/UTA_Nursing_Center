@@ -1,10 +1,6 @@
 import BrandingBar from './components/branding';
 import Dropdownmenu from './components/Dropdownmenu';
-import React, { View, Appearance, StatusBar, PlatformColor } from 'react-native';
-import opt from './components/Options';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useEffect, useState } from 'react';
-import type {StatusBarStyle} from 'react-native';
+import React, { View, StatusBar } from 'react-native';
 
 // AsyncStorage.init();
 

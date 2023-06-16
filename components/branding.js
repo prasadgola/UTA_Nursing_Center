@@ -8,7 +8,7 @@ const BrandingBar = () => {
           {/* <Text style={styles.brandingLogo}>LOGO</Text> */}
           <Image source={require('../assets/images/uta-logo.png')} style={styles.brandingLogo} />
           <View style={styles.orange}>
-            <Text style={styles.brandingText}>Text</Text>
+            <Text style={styles.brandingText}>CONHI</Text>
           </View>
         </View>
       </View>
@@ -31,7 +31,7 @@ const styles = {
   orange: {
     backgroundColor: '#CC4A13',
     marginRight: 30,
-    width: 80,
+    width: 100,
     height: 40,
     alignItems: 'center',
     justifyContent: 'space-between',

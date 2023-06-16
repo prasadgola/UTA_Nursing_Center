@@ -70,6 +70,12 @@ const Cards = ({ oldoptions, updateOptions,images, links, titles, inHome }) => {
     }
   }
 
+  const displayInfo = (information) => {
+    if (information) {
+      return <View style={styles.information}><Text style={styles.Itext}>{information}</Text></View>
+    }
+  }
+
 
   return (
     <>
@@ -89,7 +95,7 @@ const Cards = ({ oldoptions, updateOptions,images, links, titles, inHome }) => {
           </TouchableOpacity>
         ))}
       </View >
-      <Text style={{top:210, left:49, fontSize:15}}>{information}</Text>
+      {displayInfo(information)}
       </ScrollView>
     </>
   );
@@ -108,6 +114,30 @@ const styles = StyleSheet.create({
     margin: Platform.select({ios:11,android:10}),
     // bottom: -10,
   },
+
+  information: {
+    top:20,
+    width: 380,
+    height: 40,
+    marginLeft: 30,
+    marginRight: 30,
+    borderRadius: 5,
+    borderWidth: 2,
+    borderColor: 'black',
+    backgroundColor: '#CC4A13',
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowColor: '#0A3657',
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: .6,
+    shadowRadius: 15,
+    elevation: 30,
+  },
+  Itext: {
+    fontSize:16,
+    color: 'white',
+    fontWeight: '600',
+  }
 });
 
 export default Cards;

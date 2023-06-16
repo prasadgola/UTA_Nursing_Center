@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, ScrollView, Text, Platform } from 'react-native';
+import { View, StyleSheet, Platform } from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import Cards from './Cards';
 import opt from './Options';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { ArrowUp, ArrowDown } from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
 
@@ -18,7 +17,7 @@ const Dropdownmenu = () => {
   const [title, setTitle] = useState([]);
   const [iButton, setIButton] = useState(false);
   const [options, setOptions] = useState([]);
-  const [isLoading, setIsLoading] = useState (true);
+  const [isLoading, setIsLoading] = useState(true);
   
 
   const updateOptions = async (newOptions) => {
@@ -65,33 +64,6 @@ const Dropdownmenu = () => {
     setLink("");
   }
   }
-
-
-  const [press, setPress] = useState(false);
-
-  let backgroundColor;
-  // Use if else condition to assign it
-  if (press) {
-    backgroundColor = '#0061AC';
-  } else {
-    backgroundColor = '#fff';
-  }
-
-  const handleResponderStart = () => {
-    setPress(!press); // change press state to true
-  };
-
-  const handleResponderRelease = () => {
-    setPress(false); // change press state to false
-  };
-
-  // const ArrowUp = () => (
-  //   <Icon name="arrow-up" color="red" />
-  // );
-
-  // const MyArrowDownIcon = () => (
-  //   <Icon name="arrow-down" color="red" />
-  // );
 
 
   return (
