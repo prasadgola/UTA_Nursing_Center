@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: Platform.select({ios:55,android:56}),
     borderRadius: 9,
-    borderWidth: 2,
+    borderWidth: 1.4,
     borderColor: 'black',
     top: Platform.select({ios:2,android:1}),
     backgroundColor: 'white',
@@ -146,13 +146,9 @@ const styles = StyleSheet.create({
     fontSize: Platform.select({ios:16,android:17}),
     marginLeft: 21,
     fontWeight: '500',
+    
   },
 });
-
-
-
-
-
 
 
 

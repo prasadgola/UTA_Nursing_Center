@@ -72,7 +72,7 @@ const Cards = ({ oldoptions, updateOptions,images, links, titles, inHome }) => {
 
   const displayInfo = (information) => {
     if (information) {
-      return <View style={styles.information}><Text style={styles.Itext}>{information}</Text></View>
+      return <View style={styles.information}><Text style={styles.itext}>{information}</Text></View>
     }
   }
 
@@ -95,8 +95,9 @@ const Cards = ({ oldoptions, updateOptions,images, links, titles, inHome }) => {
           </TouchableOpacity>
         ))}
       </View >
-      {displayInfo(information)}
       </ScrollView>
+      {displayInfo(information)}
+
     </>
   );
 }
@@ -104,22 +105,24 @@ const Cards = ({ oldoptions, updateOptions,images, links, titles, inHome }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    
   },
   row: {
-    top: 2,
+    top: 8,
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "flex-start",
-    // alignContent: "space-between",
+    alignContent: "space-between",
     margin: Platform.select({ios:11,android:10}),
-    // bottom: -10,
+    bottom: 0,
+    // margin: 20,
   },
 
   information: {
-    top:20,
+    top:Platform.select({ios:-440,android:-356}),
     width: 380,
-    height: 40,
-    marginLeft: 30,
+    height: 50,
+    marginLeft: Platform.select({ios:25,android:16}),
     marginRight: 30,
     borderRadius: 5,
     borderWidth: 2,
@@ -133,11 +136,12 @@ const styles = StyleSheet.create({
     shadowRadius: 15,
     elevation: 30,
   },
-  Itext: {
-    fontSize:16,
+  itext: {
+    fontSize:15,
     color: 'white',
     fontWeight: '600',
-  }
+    
+  },
 });
 
 export default Cards;

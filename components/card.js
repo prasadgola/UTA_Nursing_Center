@@ -13,9 +13,9 @@ const Card = ({ image, title }) => {
 
 const styles = StyleSheet.create({
   container: {
-    height: 150,
+    height: 175,
     width: 110,
-    alignItems: "center",
+    // alignItems: "center",
     margin: Platform.select({ios:13,android:10}),
     justifyContent: "center",
     backgroundColor: 'white',
@@ -26,21 +26,27 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.4,
     shadowRadius: 5,
-    elevation: 15,
+    elevation: 7,
   },
   image: {
     width: 90,
     height: 90,
     borderRadius: 8,
     borderColor: 'black',
-    borderWidth: Platform.select({ios:1,android:2}),
+    // borderWidth: Platform.select({ios:1,android:1}),
     top: -3,
+    marginLeft: 10.5,
+    
 
   },
   title: {
     top:8,
     fontSize: 15,
     color: "black",
+    height: 55,
+    marginLeft: 0,
+    marginLeft: 12,
+    marginRight: 12,
   },
 });
 
