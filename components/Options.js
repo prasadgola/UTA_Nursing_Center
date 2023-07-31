@@ -49,7 +49,7 @@ const opt = [
       require('../assets/images/Google_Translate.png'),
     ],
     titles: [
-      "CDC",
+      "Vaccine",
       "U.S. Prevention TaskForce",
       "ASCVD plus",
       "ADA SOC",

@@ -8,7 +8,7 @@ const BrandingBar = () => {
           {/* <Text style={styles.brandingLogo}>LOGO</Text> */}
           <Image source={require('../assets/images/uta-logo.png')} style={styles.brandingLogo} />
           <View style={styles.orange}>
-            <Text style={styles.brandingText}>CONHI</Text>
+            <Text style={styles.brandingText}>College of Nursing and Health Innovation</Text>
           </View>
         </View>
       </View>
@@ -31,14 +31,15 @@ const styles = {
   orange: {
     backgroundColor: '#CC4A13',
     marginRight: 30,
-    width: 100,
-    height: 40,
+    width: 190,
+    height: 43,
     alignItems: 'center',
     justifyContent: 'space-between',
+    alignItems: 'center',
   },
   brandingText: {
     color: 'white',
-    fontSize: 28,
+    fontSize: 17,
     fontWeight: 'bold',
     // marginLeft: 5,
   },
