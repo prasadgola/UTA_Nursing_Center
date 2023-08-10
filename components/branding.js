@@ -31,7 +31,7 @@ const styles = {
   orange: {
     backgroundColor: '#CC4A13',
     marginRight: 30,
-    width: 190,
+    width: 180,
     height: 43,
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -39,7 +39,7 @@ const styles = {
   },
   brandingText: {
     color: 'white',
-    fontSize: 17,
+    fontSize: 16,
     fontWeight: 'bold',
     // marginLeft: 5,
   },

@@ -12,14 +12,23 @@ const opt = [
     links: [
       "https://accessmedicine.mhmedical.com/",
       "https://accessmedicine.mhmedical.com/",
+      "https://www.uta.edu/academics/schools-colleges/conhi/people/preceptor-resources",g
+      "https://common.forms.uta.edu/view.php?id=3685",
+      "https://uta.catalog.instructure.com/browse/organizations/ncpd/",
     ],
     images: [
       require('../assets/images/accessmc.png'),
       require('../assets/images/white.png'),
+      require('../assets/images/UTA.jpeg'),
+      require('../assets/images/book.png'),
+      require('../assets/images/CME.jpg'),
     ],
     titles: [
       "Access Medicine",
-      "How to activate Access Med"
+      "How to activate Access Med",
+      "Resources Homepage",
+      "Library access",
+      "Continuing Education"
     ],
   },
   {
