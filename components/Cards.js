@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Card from './card';
 import Ibutton from './Ibutton';
 import React, { Text, View, StyleSheet,ScrollView, Alert, TouchableOpacity, Linking} from 'react-native';
+// import Linking from 'react-native-linking';
 
 
 const Cards = ({ oldoptions, updateOptions,images, links, titles, inHome }) => {
@@ -23,7 +24,7 @@ const Cards = ({ oldoptions, updateOptions,images, links, titles, inHome }) => {
     if (inHome) {
       Alert.alert(
         'Remove from the Home Screen?',
-        'Add some text here',
+        '',
         [
           {text: 'Ok', onPress: () => {
             let newOptions = [...oldoptions];
@@ -40,7 +41,7 @@ const Cards = ({ oldoptions, updateOptions,images, links, titles, inHome }) => {
       );
     } else {Alert.alert(
       'Add to the Home Screen?',
-      'Add some text here',
+      '',
       [
         {text: 'Ok', onPress: () => updatehome(i, oldoptions)},
         {text: 'Cancel', onPress: () => console.log('No button clicked'), style: 'cancel'},
@@ -66,7 +67,11 @@ const Cards = ({ oldoptions, updateOptions,images, links, titles, inHome }) => {
         setInformation('')
       }
     } else {
-      Linking.openURL(links[i])
+      // if (i === 4 && Linking.isAppInstalled('com.mdaware.mdcalc')) {
+      //     Linking.openURL('medcalc://calculator?id=calculator_id')
+      // } else {
+        Linking.openURL(links[i])
+      // }
     }
   }
 

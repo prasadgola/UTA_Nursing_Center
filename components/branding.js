@@ -16,7 +16,7 @@ const BrandingBar = () => {
   );
 };
 
-const styles = {
+const styles ={ 
   brandingBar: {
     top: Platform.select({ios:0,android:0,}),
     width: "100%",

@@ -12,7 +12,7 @@ const opt = [
     links: [
       "https://accessmedicine.mhmedical.com/",
       "https://accessmedicine.mhmedical.com/",
-      "https://www.uta.edu/academics/schools-colleges/conhi/people/preceptor-resources",g
+      "https://www.uta.edu/academics/schools-colleges/conhi/people/preceptor-resources",
       "https://common.forms.uta.edu/view.php?id=3685",
       "https://uta.catalog.instructure.com/browse/organizations/ncpd/",
     ],
@@ -39,7 +39,6 @@ const opt = [
       "https://www.uspreventiveservicestaskforce.org/uspstf/topic_search_results?topic_status=P",
       "https://www.acc.org/Tools-and-Practice-Support/Mobile-Resources/Features/2013-Prevention-Guidelines-ASCVD-Risk-Estimator",
       "https://professional.diabetes.org/content-page/practice-guidelines-resources",
-      // "https://www.mdcalc.com/",
       "https://play.google.com/store/apps/details?id=com.mdaware.mdcalc&hl=en_US&gl=US",
       "https://www.cdc.gov/std/treatment-guidelines/default.htm",
       "https://www.medscape.com/",
